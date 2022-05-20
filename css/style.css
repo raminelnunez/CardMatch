@@ -1,0 +1,158 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+}
+
+body {
+  background: #ffffff url(img/geometry2.png);
+  padding: 0px 10px;
+}
+
+h1 {
+  color: #0f3c5e;
+  font-size: 45px;
+  text-align: center;
+  margin: 15px;
+}
+
+h1 span {
+  color: #006c5d;
+}
+
+.main-container {
+  background: #0f3c5e36;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+  margin: 10px auto;
+  max-width: 980px;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 2fr 5fr;
+  padding: 20px;
+}
+
+.scoreboard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.restart {
+  cursor: pointer;
+}
+
+#score {
+  margin-left: 10px;
+}
+
+.restart {
+  margin-top: 30px;
+  font-size: 0.8rem;
+}
+
+.fa-redo {
+  margin-right: 10px;
+}
+
+#cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(100px, 150px));
+  grid-auto-rows: 1fr;
+  grid-gap: 5px 5px;
+}
+
+#next-card {
+  color: #0f3c5e;
+  border: 1px solid black;
+  background: white;
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  width: 150px;
+  height: 150px;
+  margin: 15px auto;
+}
+
+.card {
+  background-color: #0f3c5e;
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.card:hover {
+  background-color: #246699;
+  transition-delay: 0.05s;
+  transition-duration: 0.25s;
+}
+
+.card.show {
+  background-color: #006c5d;
+  color: white;
+}
+
+#cards .card i {
+  display: none;
+}
+
+#cards .card.show i, #cards .card.matched  i {
+  display: block;
+}
+
+#cards .matched {
+  background-color: #c3e76a;
+  color: #2e3d49;
+}
+
+#cards::before {
+  content: '';
+  width: 0;
+  padding-bottom: 100%;
+  grid-row: 1 / 1;
+  grid-column: 1 / 1;
+}
+
+#cards > *:first-child {
+  grid-row: 1 / 1;
+  grid-column: 1 / 1;
+}
+
+#goback {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+#goback > a {
+  font-weight: 500;
+  text-decoration: none;
+  color: aliceblue;
+  background-color: #006c5d;
+  padding: 0.8rem;
+  border-radius: 10%;
+}
+
+#goback > a:hover {
+  font-weight: 700;
+  padding: 0.6rem;
+  background-color: #c3e76a;
+  color: olivedrab;
+  transition-duration: 0.1s;
+  transition-duration: 0.5s;
+}
+
